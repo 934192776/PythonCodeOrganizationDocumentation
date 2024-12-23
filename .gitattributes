@@ -9,3 +9,39 @@ with open('customers.csv', 'r') as file:
     l = c[3]
     e = c[9]
     print(f"Customer #{id}, {f} {l}, {e}")
+
+
+
+def calculate_average_temperature_for_continent(temperature_list, continent_name):
+  total = 0
+  cities_count = 0
+
+  for temperature in temperatures_list:
+  if temperature['continent'] == continent_name:
+    total = total + float(temperature['temperature'])
+    cities_count = cities_count + 1
+
+  average = total / cities_count
+  rounded_average = round(average, 2)
+
+  return rounded_average
+
+def display_average_temperature(average):
+  print(f"Average temperature in North America is: {average} degrees")
+
+# given the list of temperature, calculate and print the average temperature of north America cities
+
+temperatures = [
+    {'city': "Paris",'continent': "Europe","temperature": "12"},
+    {'city': "Los Angeles",'continent': "North America","temperature": "22"},
+    {'city': "Bankok",'continent': "Asia","temperature": "15"},
+    {'city': "New York",'continent': "North America","temperature": "18"},
+    {'city': "Sao Paulo",'continent': "south america","temperature": "32"},
+    {'city': "Toronto",'continent': "north america","temperature": "14"},
+]
+
+
+
+average = calculate_average_temperature_for_continent(temperatures, "North America")
+
+display_average_temperature(average)
