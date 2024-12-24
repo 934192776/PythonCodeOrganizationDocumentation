@@ -1,18 +1,11 @@
-import csv
-
-with open('customers.csv', 'r') as file:
-  cs = csv.reader(file)
-
-  for c in cs:
-    id = c[0]
-    f = c[2]
-    l = c[3]
-    e = c[9]
-    print(f"Customer #{id}, {f} {l}, {e}")
+# given the list of temperature, calculate and print the average temperature of north America cities
 
 
+def calculate_average_temperature_for_continent(temperatures_list, continent_name):
 
-def calculate_average_temperature_for_continent(temperature_list, continent_name):
+# Calculate the average temperature for a continent
+# Return the average temperature as a float 
+
   total = 0
   cities_count = 0
 
@@ -27,9 +20,11 @@ def calculate_average_temperature_for_continent(temperature_list, continent_name
   return rounded_average
 
 def display_average_temperature(average):
+# print the average temperature in a formatted message
+
   print(f"Average temperature in North America is: {average} degrees")
 
-# given the list of temperature, calculate and print the average temperature of north America cities
+# Initial data
 
 temperatures = [
     {'city': "Paris",'continent': "Europe","temperature": "12"},
@@ -40,8 +35,11 @@ temperatures = [
     {'city': "Toronto",'continent': "north america","temperature": "14"},
 ]
 
-
-
+# Use a function to calculate the average
 average = calculate_average_temperature_for_continent(temperatures, "North America")
+
+# use a class to calculate the average
+# calculator = AverageTemperatureCalculator(temperatures)
+# average = calculator.average("NorthAmerica")
 
 display_average_temperature(average)
