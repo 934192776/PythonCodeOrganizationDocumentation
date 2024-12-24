@@ -10,9 +10,9 @@ def calculate_average_temperature_for_continent(temperatures_list, continent_nam
   cities_count = 0
 
   for temperature in temperatures_list:
-  if temperature['continent'] == continent_name:
-    total = total + float(temperature['temperature'])
-    cities_count = cities_count + 1
+    if temperature['continent'] == continent_name:
+      total = total + float(temperature['temperature'])
+      cities_count = cities_count + 1
 
   average = total / cities_count
   rounded_average = round(average, 2)
